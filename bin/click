@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const robot = require("robotjs");
+
+const x = parseInt(process.argv[2]);
+const y = parseInt(process.argv[3]);
+
+robot.moveMouse(x, y);
+robot.mouseClick();
