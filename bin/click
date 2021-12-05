@@ -2,8 +2,17 @@
 
 const robot = require("robotjs");
 
-const x = parseInt(process.argv[2]);
-const y = parseInt(process.argv[3]);
+let x = parseInt(process.argv[2]);
+let y = parseInt(process.argv[3]);
+
+const screenSize = robot.getScreenSize();
+if (x < 0) {
+  x = screenSize.width + x + 1
+}
+if (y < 0) {
+  y = screenSize.height + y + 1
+}
+
 
 robot.moveMouse(x, y);
 robot.mouseClick();
